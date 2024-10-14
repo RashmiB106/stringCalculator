@@ -48,7 +48,6 @@ test("should return the number itself when only one number is provided", () => {
   expect(screen.getByText(/Result: 5/i)).toBeInTheDocument();
 });
  
- 
 test("should return the sum of two numbers", () => {
   render(<StringCalculator />);
   const textarea = screen.getByPlaceholderText(/Examples/i);
@@ -71,7 +70,6 @@ test("should return the sum of two numbers", () => {
   expect(screen.getByText(/Result: 6/i)).toBeInTheDocument();
 });
  
- 
 test("should return the sum of an unknown number of numbers", () => {
   render(<StringCalculator />);
   const textarea = screen.getByPlaceholderText(/Examples/i);
@@ -82,7 +80,6 @@ test("should return the sum of an unknown number of numbers", () => {
  
   expect(screen.getByText(/Result: 10/i)).toBeInTheDocument();
 });
- 
  
 test("should ignore numbers larger than 1000", () => {
   render(<StringCalculator />);
@@ -95,7 +92,6 @@ test("should ignore numbers larger than 1000", () => {
   expect(screen.getByText(/Result: 1999/i)).toBeInTheDocument();
 });
  
- 
 test("should throw an error when a negative number is provided", () => {
   render(<StringCalculator />);
   const textarea = screen.getByPlaceholderText(/Examples/i);
@@ -105,6 +101,7 @@ test("should throw an error when a negative number is provided", () => {
   fireEvent.click(button);
   expect(screen.queryByText(/Result:/)).not.toBeInTheDocument();
 });
+
  
 test("should throw an error when a negative number is provided", () => {
   render(<StringCalculator />);
@@ -117,6 +114,7 @@ test("should throw an error when a negative number is provided", () => {
 });
  
  
+// THIS TEST CASES ARE NOT IMPEMENTED YET
 // test("should return the sum of an unknown number of numbers", () => {
 //   render(<StringCalculator />);
 //   const textarea = screen.getByPlaceholderText(/Examples/i);

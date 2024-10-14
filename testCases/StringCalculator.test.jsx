@@ -5,24 +5,24 @@ import StringCalculator from '../src/components/StringCalculator.jsx';
 test('should return 0 for an empty string', () => {
   render(<StringCalculator />);
   const textarea = screen.getByPlaceholderText(/Examples/i);
-    fireEvent.change(textarea, { target: { value: '' } });
+  fireEvent.change(textarea, { target: { value: '' } });
  
-    const button = screen.getByText(/Calculate Sum/i);
-    fireEvent.click(button);
- 
-   expect(screen.getByText(/Result: 0/i)).toBeInTheDocument();
+  const button = screen.getByText(/Calculate Sum/i);
+  fireEvent.click(button);
+
+  expect(screen.getByText(/Result: 0/i)).toBeInTheDocument();
 });
  
 test("calculates the sum of the input numbers", () => {
-    render(<StringCalculator />);
- 
-    const textarea = screen.getByPlaceholderText(/Examples/i);
-    fireEvent.change(textarea, { target: { value: '1,2,3' } });
- 
-    const button = screen.getByText(/Calculate Sum/i);
-    fireEvent.click(button);
- 
-    expect(screen.getByText(/Result: 6/i)).toBeInTheDocument();
+  render(<StringCalculator />);
+
+  const textarea = screen.getByPlaceholderText(/Examples/i);
+  fireEvent.change(textarea, { target: { value: '1,2,3' } });
+
+  const button = screen.getByText(/Calculate Sum/i);
+  fireEvent.click(button);
+
+  expect(screen.getByText(/Result: 6/i)).toBeInTheDocument();
 });
  
 test("should return the number itself when only one number is provided", () => {
@@ -102,7 +102,6 @@ test("should throw an error when a negative number is provided", () => {
   expect(screen.queryByText(/Result:/)).not.toBeInTheDocument();
 });
 
- 
 test("should throw an error when a negative number is provided", () => {
   render(<StringCalculator />);
   const textarea = screen.getByPlaceholderText(/Examples/i);
